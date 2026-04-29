@@ -1,0 +1,18 @@
+project_name: NewsRank
+paths:
+  raw_data_dir: data/raw
+  processed_data_dir: data/processed
+  news_file: data/raw/news.tsv
+  behaviors_file: data/raw/behaviors.tsv
+runtime:
+  top_k_default: 10
+  random_seed: 42
+features:
+  recency_half_life_hours: 24
+candidate_generation:
+  popularity_top_n: 50
+  embedding_top_n: 50
+reranking:
+  duplicate_category_penalty: 0.08
+  repeated_source_penalty: 0.05
+  freshness_bonus_weight: 0.05
